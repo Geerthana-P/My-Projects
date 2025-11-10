@@ -1,0 +1,73 @@
+use Shop
+switched to db Shop
+db.products.insertOne({ name: "Laptop", price: 75000, category: "Electronics" })
+{
+  acknowledged: true,
+  insertedId: ObjectId('690d883374050507f1b81331')
+}
+db.products.insertMany([
+  { name: "Headphones", price: 2000, category: "Electronics" },
+  { name: "Notebook", price: 50, category: "Stationery" },
+  { name: "Desk Chair", price: 3000, category: "Furniture" }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('690d885274050507f1b81332'),
+    '1': ObjectId('690d885274050507f1b81333'),
+    '2': ObjectId('690d885274050507f1b81334')
+  }
+}
+db.products.find()
+{
+  _id: ObjectId('690d883374050507f1b81331'),
+  name: 'Laptop',
+  price: 75000,
+  category: 'Electronics'
+}
+{
+  _id: ObjectId('690d885274050507f1b81332'),
+  name: 'Headphones',
+  price: 2000,
+  category: 'Electronics'
+}
+{
+  _id: ObjectId('690d885274050507f1b81333'),
+  name: 'Notebook',
+  price: 50,
+  category: 'Stationery'
+}
+{
+  _id: ObjectId('690d885274050507f1b81334'),
+  name: 'Desk Chair',
+  price: 3000,
+  category: 'Furniture'
+}
+db.products.find({ price: { $gt: 50 } })
+{
+  _id: ObjectId('690d883374050507f1b81331'),
+  name: 'Laptop',
+  price: 75000,
+  category: 'Electronics'
+}
+{
+  _id: ObjectId('690d885274050507f1b81332'),
+  name: 'Headphones',
+  price: 2000,
+  category: 'Electronics'
+}
+db.products.updateOne(
+  { name: "Laptop" },
+  { $set: { price: 80000 } }
+)
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.products.deleteOne({ name: "Notebook" })
+{
+  acknowledged: true,
+  deletedCount: 1
+}

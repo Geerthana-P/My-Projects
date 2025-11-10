@@ -1,0 +1,65 @@
+[{
+  "_id": {
+    "$oid": "690d987edf465b4556275d9a"
+  },
+  "name": "Alice",
+  "age": 25,
+  "city": "Chennai",
+  "interests": [
+    "music",
+    "travel",
+    "cooking"
+  ],
+  "social_links": {
+    "instagram": "@alice25",
+    "twitter": "@alice_t"
+  }
+},
+{
+  "_id": {
+    "$oid": "690d987edf465b4556275d9b"
+  },
+  "name": "Bob",
+  "age": 30,
+  "city": "Bangalore",
+  "interests": [
+    "sports",
+    "technology"
+  ],
+  "social_links": {
+    "linkedin": "linkedin.com/in/bob-tech"
+  }
+},
+{
+  "_id": {
+    "$oid": "690d987edf465b4556275d9c"
+  },
+  "name": "Charlie",
+  "age": 28,
+  "city": "Delhi",
+  "interests": [
+    "reading",
+    "travel",
+    "fitness"
+  ],
+  "social_links": {
+    "instagram": "@fit_charlie"
+  },
+  "premium_user": true
+},
+{
+  "_id": {
+    "$oid": "690d987edf465b4556275d9d"
+  },
+  "name": "Diana",
+  "age": 22,
+  "city": "Chennai",
+  "interests": [
+    "fashion",
+    "makeup"
+  ],
+  "social_links": {
+    "instagram": "@diana_styles",
+    "youtube": "DianaVlogs"
+  }
+}]

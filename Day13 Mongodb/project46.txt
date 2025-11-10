@@ -1,0 +1,35 @@
+db.posts.insertMany([
+  { author: "Alice", tags: ["travel", "food"], views: 120 },
+  { author: "Bob", tags: ["tech", "ai"], views: 300 },
+  { author: "Alice", tags: ["lifestyle"], views: 80 },
+  { author: "Charlie", tags: ["sports", "fitness"], views: 200 },
+  { author: "Bob", tags: ["tech"], views: 150 },
+  { author: "Charlie", tags: ["health", "wellness"], views: 250 }
+])
+
+acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('690d954adf465b4556275d94'),
+    '1': ObjectId('690d954adf465b4556275d95'),
+    '2': ObjectId('690d954adf465b4556275d96'),
+    '3': ObjectId('690d954adf465b4556275d97'),
+    '4': ObjectId('690d954adf465b4556275d98'),
+    '5': ObjectId('690d954adf465b4556275d99')
+  }
+}
+db.posts.aggregate([
+  { $group: { _id: "$author", total_views: { $sum: "$views" } } },
+  { $sort: { total_views: -1 } }
+])
+{
+  _id: 'Charlie',
+  total_views: 450
+}
+{
+  _id: 'Bob',
+  total_views: 450
+}
+{
+  _id: 'Alice',
+  total_views: 200
+}

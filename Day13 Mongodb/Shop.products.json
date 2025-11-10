@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "690d883374050507f1b81331"
+  },
+  "name": "Laptop",
+  "price": 80000,
+  "category": "Electronics"
+},
+{
+  "_id": {
+    "$oid": "690d885274050507f1b81332"
+  },
+  "name": "Headphones",
+  "price": 2000,
+  "category": "Electronics"
+},
+{
+  "_id": {
+    "$oid": "690d885274050507f1b81334"
+  },
+  "name": "Desk Chair",
+  "price": 3000,
+  "category": "Furniture"
+}]

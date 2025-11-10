@@ -1,0 +1,146 @@
+db.users.insertMany([
+  {
+    name: "Alice",
+    age: 25,
+    city: "Chennai",
+    interests: ["music", "travel", "cooking"],
+    social_links: { instagram: "@alice25", twitter: "@alice_t" }
+  },
+  {
+    name: "Bob",
+    age: 30,
+    city: "Bangalore",
+    interests: ["sports", "technology"],
+    social_links: { linkedin: "linkedin.com/in/bob-tech" }
+  },
+  {
+    name: "Charlie",
+    age: 28,
+    city: "Delhi",
+    interests: ["reading", "travel", "fitness"],
+    social_links: { instagram: "@fit_charlie" },
+    premium_user: true
+  },
+  {
+    name: "Diana",
+    age: 22,
+    city: "Chennai",
+    interests: ["fashion", "makeup"],
+    social_links: { instagram: "@diana_styles", youtube: "DianaVlogs" }
+  }
+])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('690d987edf465b4556275d9a'),
+    '1': ObjectId('690d987edf465b4556275d9b'),
+    '2': ObjectId('690d987edf465b4556275d9c'),
+    '3': ObjectId('690d987edf465b4556275d9d')
+  }
+}
+db.users.find({ city: "Chennai" })
+{
+  _id: ObjectId('690d987edf465b4556275d9a'),
+  name: 'Alice',
+  age: 25,
+  city: 'Chennai',
+  interests: [
+    'music',
+    'travel',
+    'cooking'
+  ],
+  social_links: {
+    instagram: '@alice25',
+    twitter: '@alice_t'
+  }
+}{
+  _id: ObjectId('690d987edf465b4556275d9d'),
+  name: 'Diana',
+  age: 22,
+  city: 'Chennai',
+  interests: [
+    'fashion',
+    'makeup'
+  ],
+  social_links: {
+    instagram: '@diana_styles',
+    youtube: 'DianaVlogs'
+  }
+}
+db.users.find({ interests: "travel" })
+
+{
+  _id: ObjectId('690d987edf465b4556275d9a'),
+  name: 'Alice',
+  age: 25,
+  city: 'Chennai',
+  interests: [
+    'music',
+    'travel',
+    'cooking'
+  ],
+  social_links: {
+    instagram: '@alice25',
+    twitter: '@alice_t'
+  }
+}{
+  _id: ObjectId('690d987edf465b4556275d9a'),
+  name: 'Alice',
+  age: 25,
+  city: 'Chennai',
+  interests: [
+    'music',
+    'travel',
+    'cooking'
+  ],
+  social_links: {
+    instagram: '@alice25',
+    twitter: '@alice_t'
+  }
+}
+db.users.find({ "social_links.instagram": { $exists: true } })
+{
+  _id: ObjectId('690d987edf465b4556275d9a'),
+  name: 'Alice',
+  age: 25,
+  city: 'Chennai',
+  interests: [
+    'music',
+    'travel',
+    'cooking'
+  ],
+  social_links: {
+    instagram: '@alice25',
+    twitter: '@alice_t'
+  }
+}{
+  _id: ObjectId('690d987edf465b4556275d9c'),
+  name: 'Charlie',
+  age: 28,
+  city: 'Delhi',
+  interests: [
+    'reading',
+    'travel',
+    'fitness'
+  ],
+  social_links: {
+    instagram: '@fit_charlie'
+  },
+  premium_user: true
+}
+
+}
+{
+  _id: ObjectId('690d987edf465b4556275d9d'),
+  name: 'Diana',
+  age: 22,
+  city: 'Chennai',
+  interests: [
+    'fashion',
+    'makeup'
+  ],
+  social_links: {
+    instagram: '@diana_styles',
+    youtube: 'DianaVlogs'
+  }
+}

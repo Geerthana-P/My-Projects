@@ -1,0 +1,64 @@
+[{
+  "_id": {
+    "$oid": "690d954adf465b4556275d94"
+  },
+  "author": "Alice",
+  "tags": [
+    "travel",
+    "food"
+  ],
+  "views": 120
+},
+{
+  "_id": {
+    "$oid": "690d954adf465b4556275d95"
+  },
+  "author": "Bob",
+  "tags": [
+    "tech",
+    "ai"
+  ],
+  "views": 300
+},
+{
+  "_id": {
+    "$oid": "690d954adf465b4556275d96"
+  },
+  "author": "Alice",
+  "tags": [
+    "lifestyle"
+  ],
+  "views": 80
+},
+{
+  "_id": {
+    "$oid": "690d954adf465b4556275d97"
+  },
+  "author": "Charlie",
+  "tags": [
+    "sports",
+    "fitness"
+  ],
+  "views": 200
+},
+{
+  "_id": {
+    "$oid": "690d954adf465b4556275d98"
+  },
+  "author": "Bob",
+  "tags": [
+    "tech"
+  ],
+  "views": 150
+},
+{
+  "_id": {
+    "$oid": "690d954adf465b4556275d99"
+  },
+  "author": "Charlie",
+  "tags": [
+    "health",
+    "wellness"
+  ],
+  "views": 250
+}]

@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "690da72a543b1d2080080a0d"
+  },
+  "device_id": "sensor_001",
+  "timestamp": {
+    "$date": "2025-11-07T08:15:00.000Z"
+  },
+  "temperature": 28.5,
+  "humidity": 65,
+  "pressure": 1012
+},
+{
+  "_id": {
+    "$oid": "690da72a543b1d2080080a0e"
+  },
+  "device_id": "sensor_001",
+  "timestamp": {
+    "$date": "2025-11-07T09:00:00.000Z"
+  },
+  "temperature": 29.2,
+  "humidity": 63,
+  "pressure": 1011
+},
+{
+  "_id": {
+    "$oid": "690da72a543b1d2080080a0f"
+  },
+  "device_id": "sensor_001",
+  "timestamp": {
+    "$date": "2025-11-07T09:45:00.000Z"
+  },
+  "temperature": 30,
+  "humidity": 60,
+  "pressure": 1010
+},
+{
+  "_id": {
+    "$oid": "690da72a543b1d2080080a10"
+  },
+  "device_id": "sensor_002",
+  "timestamp": {
+    "$date": "2025-11-07T10:30:00.000Z"
+  },
+  "temperature": 27.8,
+  "humidity": 70,
+  "pressure": 1013
+}]

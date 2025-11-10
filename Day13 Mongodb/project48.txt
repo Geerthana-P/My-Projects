@@ -1,0 +1,99 @@
+db.sensor.insertMany([
+  {
+    device_id: "sensor_001",
+    timestamp: ISODate("2025-11-07T08:15:00Z"),
+    temperature: 28.5,
+    humidity: 65,
+    pressure: 1012
+  },
+  {
+    device_id: "sensor_001",
+    timestamp: ISODate("2025-11-07T09:00:00Z"),
+    temperature: 29.2,
+    humidity: 63,
+    pressure: 1011
+  },
+  {
+    device_id: "sensor_001",
+    timestamp: ISODate("2025-11-07T09:45:00Z"),
+    temperature: 30.0,
+    humidity: 60,
+    pressure: 1010
+  },
+  {
+    device_id: "sensor_002",
+    timestamp: ISODate("2025-11-07T10:30:00Z"),
+    temperature: 27.8,
+    humidity: 70,
+    pressure: 1013
+  }
+]);{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('690da72a543b1d2080080a0d'),
+    '1': ObjectId('690da72a543b1d2080080a0e'),
+    '2': ObjectId('690da72a543b1d2080080a0f'),
+    '3': ObjectId('690da72a543b1d2080080a10')
+  }
+}
+db.sensor.aggregate([
+  {
+    $group: {
+      _id: {
+        hour: { $hour: "$timestamp" },
+        device: "$device_id"
+      },
+      avgTemperature: { $avg: "$temperature" }
+    }
+  },
+  {
+    $sort: { "_id.hour": 1 }
+  }
+]);
+{
+  _id: {
+    hour: 8,
+    device: 'sensor_001'
+  },
+  avgTemperature: 28.5
+}
+{
+  _id: {
+    hour: 9,
+    device: 'sensor_001'
+  },
+  avgTemperature: 29.6
+}{
+  _id: {
+    hour: 10,
+    device: 'sensor_002'
+  },
+  avgTemperature: 27.8
+}
+db.sensor.aggregate([
+  {
+    $match: {
+      timestamp: {
+        $gte: ISODate("2025-11-07T00:00:00Z"),
+        $lt: ISODate("2025-11-08T00:00:00Z")
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$device_id",
+      minTemp: { $min: "$temperature" },
+      maxTemp: { $max: "$temperature" }
+    }
+  }
+]);
+{
+  _id: 'sensor_001',
+  minTemp: 28.5,
+  maxTemp: 30
+}
+{
+  _id: 'sensor_002',
+  minTemp: 27.8,
+  maxTemp: 27.8
+}
