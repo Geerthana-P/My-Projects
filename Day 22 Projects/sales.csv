@@ -1,0 +1,9 @@
+product,region,units_sold,price
+Laptop,North,20,50000
+Laptop,South,15,52000
+Mobile,North,50,12000
+Mobile,East,30,11500
+TV,West,10,30000
+TV,South,12,31000
+Headphones,East,40,2000
+Headphones,West,35,2200
